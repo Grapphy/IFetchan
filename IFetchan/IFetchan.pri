@@ -11,8 +11,7 @@ HEADERS += ./fourchan.h \
     ./httpclient.h \
     ./imageframe.h \
     ./ifetchan.h
-SOURCES += ./application.cpp \
-    ./fourchan.cpp \
+SOURCES += ./fourchan.cpp \
     ./httpclient.cpp \
     ./ifetchan.cpp \
     ./imageframe.cpp \
