@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>IFetchanClass</class>
+ <widget class="QMainWindow" name="IFetchanClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1081</width>
+    <height>631</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>IFetchan</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="ifetchan.qrc">
+    <normaloff>:/IFetchan/Icon.ico</normaloff>:/IFetchan/Icon.ico</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QFrame" name="dashboard_frame">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>390</width>
+      <height>571</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">.QFrame{
+	background-color: rgb(36, 36, 36);
+	border: 1px solid rgb(62, 57, 80);
+    border-top-left-radius: 10px;
+	border-color: rgb(66, 66, 66);
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="title_label">
+     <property name="geometry">
+      <rect>
+       <x>19</x>
+       <y>20</y>
+       <width>341</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 20pt &quot;Segoe UI&quot;;
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>4chan Image Fetch</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="thread_lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>140</y>
+       <width>341</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">.QLineEdit {
+	background-color: rgb(41, 41, 41);
+	border: 1px solid rgb(44, 44, 44);
+	border-radius: 2px;
+	border-bottom-color: rgb(152, 152, 152);
+    font: 10pt &quot;Berlin Sans&quot;;
+    padding-left: 7;
+}
+
+.QLineEdit:hover {
+	background-color: rgb(31, 31, 31);
+}</string>
+     </property>
+     <property name="placeholderText">
+      <string>Ex: https://boards.4channel.org/c/thread/147251021</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="thread_label">
+     <property name="geometry">
+      <rect>
+       <x>24</x>
+       <y>100</y>
+       <width>141</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 15pt &quot;Segoe UI&quot;;
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Thread URL / ID</string>
+     </property>
+    </widget>
+    <widget class="Line" name="line">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>341</width>
+       <height>2</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(222, 222, 222);
+border-color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="load_pushButton">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>190</y>
+       <width>110</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">.QPushButton{
+	color: rgb(255, 255, 255);
+	background-color: rgb(41, 41, 41);
+	border: 1px solid rgb(44, 44, 44);
+	border-radius: 5px;
+	font: 10pt &quot;Berlin Sans&quot;;
+}
+
+.QPushButton:hover {
+	background-color: rgb(31, 31, 31);
+}
+
+.QPushButton:pressed {
+	background-color: rgb(25, 25, 25);
+}
+
+.QPushButton:disabled{
+    color: rgb(117, 117, 117);
+	background-color: rgb(38, 38, 38);
+}</string>
+     </property>
+     <property name="text">
+      <string>Load files</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="download_pushButton">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>135</x>
+       <y>190</y>
+       <width>110</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">.QPushButton{
+	color: rgb(255, 255, 255);
+	background-color: rgb(41, 41, 41);
+	border: 1px solid rgb(44, 44, 44);
+	border-radius: 5px;
+	font: 10pt &quot;Berlin Sans&quot;;
+}
+
+.QPushButton:hover {
+	background-color: rgb(31, 31, 31);
+}
+
+.QPushButton:pressed {
+	background-color: rgb(25, 25, 25);
+}
+
+.QPushButton:disabled{
+    color: rgb(117, 117, 117);
+	background-color: rgb(38, 38, 38);
+}</string>
+     </property>
+     <property name="text">
+      <string>Download</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="clear_pushButton">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>251</x>
+       <y>190</y>
+       <width>110</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">.QPushButton{
+	color: rgb(255, 255, 255);
+	background-color: rgb(41, 41, 41);
+	border: 1px solid rgb(44, 44, 44);
+	border-radius: 5px;
+	font: 10pt &quot;Berlin Sans&quot;;
+}
+
+.QPushButton:hover {
+	background-color: rgb(31, 31, 31);
+}
+
+.QPushButton:pressed {
+	background-color: rgb(25, 25, 25);
+}
+
+.QPushButton:disabled{
+    color: rgb(117, 117, 117);
+	background-color: rgb(38, 38, 38);
+}</string>
+     </property>
+     <property name="text">
+      <string>Clear</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="output_label">
+     <property name="geometry">
+      <rect>
+       <x>25</x>
+       <y>230</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 15pt &quot;Segoe UI&quot;;
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Output folder</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="output_lineEdit">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>270</y>
+       <width>341</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">.QLineEdit {
+	color: gray;
+	background-color: rgb(41, 41, 41);
+	border: 1px solid rgb(44, 44, 44);
+	border-radius: 2px;
+	border-bottom-color: rgb(112, 112, 112);
+    font: 10pt &quot;Berlin Sans&quot;;
+    padding-left: 7;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+     <property name="placeholderText">
+      <string>Output folder path shows here ...</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="open_pushButton">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>185</x>
+       <y>230</y>
+       <width>176</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">.QPushButton{
+	color: rgb(255, 255, 255);
+	background-color: rgb(41, 41, 41);
+	border: 1px solid rgb(44, 44, 44);
+	border-radius: 5px;
+	font: 10pt &quot;Berlin Sans&quot;;
+}
+
+.QPushButton:hover {
+	background-color: rgb(31, 31, 31);
+}
+
+.QPushButton:pressed {
+	background-color: rgb(25, 25, 25);
+}
+
+.QPushButton:disabled{
+    color: rgb(117, 117, 117);
+	background-color: rgb(38, 38, 38);
+}</string>
+     </property>
+     <property name="text">
+      <string>Open folder</string>
+     </property>
+    </widget>
+    <widget class="QPlainTextEdit" name="debug_plainTextEdit">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>370</y>
+       <width>341</width>
+       <height>181</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">.QPlainTextEdit{
+	color: gray;
+	background-color: rgb(41, 41, 41);
+	border: 1px solid rgb(44, 44, 44);
+	border-radius: 5px;
+	border-bottom-color: rgb(112, 112, 112);
+    font: 10pt &quot;Berlin Sans&quot;;
+    padding-left: 7;
+	padding-top: 7;
+	padding-bottom: 7;
+	padding-right: 7;
+}</string>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="undoRedoEnabled">
+      <bool>false</bool>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+     <property name="plainText">
+      <string>** Starting application **</string>
+     </property>
+     <property name="placeholderText">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="debug_label">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>320</y>
+       <width>321</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 15pt &quot;Segoe UI&quot;;
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="text">
+      <string>Debug console</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="display_frame">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>10</y>
+      <width>671</width>
+      <height>571</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">.QFrame{
+	background-color: rgb(30, 30, 30);
+	border: 1px solid rgb(62, 57, 80);
+    border-left: black;
+    border-top-right-radius: 10px;
+	border-color: rgb(66, 66, 66);
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QScrollArea" name="frames_scrollArea">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>651</width>
+       <height>541</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(30, 30, 30);
+color: rgb(255, 255, 255);</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAsNeeded</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="sizeAdjustPolicy">
+      <enum>QAbstractScrollArea::AdjustToContents</enum>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>651</width>
+        <height>541</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetFixedSize</enum>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <property name="spacing">
+        <number>0</number>
+       </property>
+      </layout>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>580</y>
+      <width>1061</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">.QFrame{
+	background-color: rgb(48, 48, 48);
+	border: 1px solid rgb(62, 57, 80);
+	border-bottom-left-radius: 10px;
+	border-right-color: rgb(66, 66, 66);
+	border-top-color: rgb(66, 66, 66);
+	border-bottom-right-radius: 10px;
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QProgressBar" name="status_progressBar">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>1041</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">.QProgressBar {
+	background-color: rgb(68, 68, 68);
+	color: white;	
+	border-style: outset;
+	border-width: 2px;
+	border-color: rgb(103, 103, 103);
+	border-radius: 7px;
+}
+
+.QProgressBar::chunk {
+	background-color: rgb(145, 180, 161) ; 
+	border-style: outset;
+	border-width: 2px;
+	border-color: rgb(103, 103, 103);
+	border-radius: 7px;
+}</string>
+     </property>
+     <property name="value">
+      <number>0</number>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="textVisible">
+      <bool>false</bool>
+     </property>
+     <property name="invertedAppearance">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </widget>
+   <zorder>display_frame</zorder>
+   <zorder>dashboard_frame</zorder>
+   <zorder>frame</zorder>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="ifetchan.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="IFetchan">
+    <file>Icon.ico</file>
+  </qresource>
+</RCC>
