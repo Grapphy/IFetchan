@@ -1,5 +1,5 @@
 # IFetchan
-For downloading images from 4chan.
+For downloading images from an image board.
 
 This is a C++ reimplementation of a previous project i made ([IFetchan.py](https://github.com/Grapphy/IFetchan.py))
 
